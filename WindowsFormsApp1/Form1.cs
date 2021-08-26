@@ -27,9 +27,10 @@ namespace WindowsFormsApp1
         [DllImport("user32.dll", EntryPoint = "SetWindowText", CharSet = CharSet.Ansi)]
         public static extern bool SetWindowText(IntPtr hWnd, String strNewWindowName);
         private const int EM_SETCUEBANNER = 0x1501;
-      
-      
 
+
+        //using spy++ to get the handler of the repective window and field
+        //use of ApiViewer
         public Form1()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace WindowsFormsApp1
             {
                  SetForegroundWindow(CHand);
 
-                SendMessage(CHand, EM_SETCUEBANNER, 0, "Search Me");
+                 SendMessage(CHand, EM_SETCUEBANNER, 0, "Search Me");
             }
             else
             {
